@@ -21,14 +21,7 @@ Page({
     })
   },
   onGetUserInfo: function(e) {
-    if (!this.logged && e.detail.userInfo) {
-      wx.setStorageSync('userInfo', e.detail.userInfo)
-      this.setData({
-        logged: true,
-        avatarUrl: e.detail.userInfo.avatarUrl,
-        userInfo: e.detail.userInfo
-      })
-    }    
+       
     
     
   },
