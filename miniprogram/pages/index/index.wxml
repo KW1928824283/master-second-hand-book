@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view >
+
+
+<view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <view>
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+  </view>
+
+
+<!-- 按钮上传信息 -->
+<view>
+  <button bindtap='uploadMessage'>上传信息</button>
+</view>
+
+<!-- 用户基本信息 -->
+<view>
+  <open-data type="userAvatarUrl"></open-data>
+  <open-data type="userNickName"></open-data>
+</view>
+
+
+</view>

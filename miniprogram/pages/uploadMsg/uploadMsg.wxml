@@ -1,0 +1,74 @@
+<!--miniprogram/pages/uploadMsg/uploadMsg.wxml-->
+
+<text>/pages/uploadMsg/uploadMsg.wxml</text>
+
+<view>
+
+  <!-- 提交信息表单 -->
+  <form bindsubmit='msgSubmit'>
+      <!-- 标题 -->
+      <view>
+        <text>标题(3~25字)</text>
+        <textarea name='title' auto-height='true' maxlength='25'></textarea>
+      </view>
+
+      <!-- 详细描述 -->
+      <view>
+        <text>描述（不超过140字）</text>
+        <textarea name='description'></textarea>
+      </view>
+
+
+      <!-- 图片，最多三张最少一张 -->
+      <view class='addImages'>
+        
+
+
+        <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title">{{imageUploadTitle}}</view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{uploadedImagesPaths}}" wx:for-item="image" wx:key="*this">
+                      <view class="weui-uploader__file choose-image">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                        <view bindtap='deleteImg' data-src='{{image}}' class='delete-btn'>
+                          <image class='delete-img' src='../../images/close.png'></image>
+                        </view>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box view-show {{full?'view-hide':''}}">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        
+
+
+
+        
+      </view>
+
+
+      <!-- 联系方式 -->
+      <view>
+        <text>联系方式</text>
+        <textarea name='contact' auto-height='true' maxlength='30'></textarea>
+      </view>
+
+      <!-- 提交按钮 -->
+      <button form-type='submit'>发布</button>
+
+  </form>
+  
+
+
+</view>
